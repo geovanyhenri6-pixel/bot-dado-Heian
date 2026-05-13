@@ -1,5 +1,6 @@
 import random 
 import discord 
+import os
 
 intents = discord.Intents.default() 
 intents.message_content = True 
@@ -103,4 +104,5 @@ async def on_message(message):
         #--------------------------------------------------------
         #--------------------------------------------------------
 
-client.run(DISCORD_TOKEN)
+token = os.getenv("DISCORD_TOKEN")
+client.run(token)
